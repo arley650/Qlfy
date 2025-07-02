@@ -161,7 +161,7 @@ const Index = () => {
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-8">
               <img 
-                src="/lovable-uploads/8d80864b-bba6-44c0-ba1b-12b0df5f51c1.png" 
+                src="/lovable-uploads/bdadbcfa-ca89-48eb-a521-86ecd0fd3b8f.png" 
                 alt="Qlfy Logo" 
                 className="h-16 w-auto mr-4"
               />
