@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import * as RechartsPrimitive from "recharts"
 
@@ -65,34 +66,55 @@ const ChartContainer = React.forwardRef<
 })
 ChartContainer.displayName = "Chart"
 
-const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
+// Secure CSS generation function
+const generateSecureCSS = (id: string, config: ChartConfig): string => {
   const colorConfig = Object.entries(config).filter(
     ([_, config]) => config.theme || config.color
   )
 
   if (!colorConfig.length) {
+    return ''
+  }
+
+  // Sanitize the chart ID to prevent CSS injection
+  const sanitizedId = id.replace(/[^a-zA-Z0-9-_]/g, '')
+  
+  return Object.entries(THEMES)
+    .map(([theme, prefix]) => {
+      const cssRules = colorConfig
+        .map(([key, itemConfig]) => {
+          // Sanitize the key to prevent CSS injection
+          const sanitizedKey = key.replace(/[^a-zA-Z0-9-_]/g, '')
+          
+          const color = itemConfig.theme?.[theme as keyof typeof itemConfig.theme] || itemConfig.color
+          
+          // Validate color value to prevent CSS injection
+          if (!color || !/^#[0-9A-Fa-f]{3,8}$|^rgb\(|^rgba\(|^hsl\(|^hsla\(|^[a-zA-Z]+$/.test(color)) {
+            return null
+          }
+          
+          return `  --color-${sanitizedKey}: ${color};`
+        })
+        .filter(Boolean)
+        .join('\n')
+
+      return cssRules ? `${prefix} [data-chart=${sanitizedId}] {\n${cssRules}\n}` : ''
+    })
+    .filter(Boolean)
+    .join('\n')
+}
+
+const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
+  const secureCSS = React.useMemo(() => generateSecureCSS(id, config), [id, config])
+  
+  if (!secureCSS) {
     return null
   }
 
   return (
     <style
       dangerouslySetInnerHTML={{
-        __html: Object.entries(THEMES)
-          .map(
-            ([theme, prefix]) => `
-${prefix} [data-chart=${id}] {
-${colorConfig
-  .map(([key, itemConfig]) => {
-    const color =
-      itemConfig.theme?.[theme as keyof typeof itemConfig.theme] ||
-      itemConfig.color
-    return color ? `  --color-${key}: ${color};` : null
-  })
-  .join("\n")}
-}
-`
-          )
-          .join("\n"),
+        __html: secureCSS,
       }}
     />
   )

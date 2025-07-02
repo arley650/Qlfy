@@ -1,19 +1,10 @@
 
 import { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { SecureContactForm } from "../components/SecureContactForm";
 
 const Contact = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,20 +17,6 @@ const Contact = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
-  };
 
   const bubblePositions = [
     { width: 80, height: 80, left: 10, top: 15, duration: 8 },
@@ -112,77 +89,7 @@ const Contact = () => {
               </h1>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your name
-                  </Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg border-gray-300"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your email
-                  </Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg border-gray-300"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </Label>
-                  <Input
-                    id="subject"
-                    name="subject"
-                    type="text"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg border-gray-300"
-                    required
-                  />
-                </div>
-
-                <div>
-                  <Label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your message (optional)
-                  </Label>
-                  <Textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full h-32 rounded-lg border-gray-300 resize-none"
-                    placeholder="Tell us more about your inquiry..."
-                  />
-                </div>
-
-                <div className="text-center">
-                  <Button 
-                    type="submit" 
-                    className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium"
-                  >
-                    Submit
-                  </Button>
-                </div>
-              </form>
-            </div>
+            <SecureContactForm />
           </div>
         </div>
       </div>
