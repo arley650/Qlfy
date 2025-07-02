@@ -1,6 +1,6 @@
 
 import Navigation from "../components/Navigation";
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Team = () => {
   const teamMembers = [
@@ -8,7 +8,8 @@ const Team = () => {
       initials: "RB",
       name: "Richard Barber",
       role: "Chief Commercial Officer",
-      description: "Ex Money Saving Expert and Everything Financial"
+      description: "Ex Money Saving Expert and Everything Financial",
+      image: "/lovable-uploads/a7bb2469-8143-45bc-9adb-41004e340b2b.png"
     },
     {
       initials: "MFJ",
@@ -59,6 +60,9 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <div key={index} className="text-center">
               <Avatar className="w-32 h-32 mx-auto mb-6 bg-blue-600 text-white text-2xl font-bold">
+                {member.image ? (
+                  <AvatarImage src={member.image} alt={member.name} />
+                ) : null}
                 <AvatarFallback className="bg-blue-600 text-white text-2xl font-bold">
                   {member.initials}
                 </AvatarFallback>
