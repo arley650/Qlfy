@@ -1,15 +1,10 @@
-
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { useBubbleAnimation } from "../hooks/useBubbleAnimation";
 
 const Team = () => {
-  const [bubbleKey, setBubbleKey] = useState(0);
-
-  useEffect(() => {
-    // Reset bubble animations when component mounts
-    setBubbleKey(prev => prev + 1);
-  }, []);
+  const bubbles = useBubbleAnimation(10);
 
   const teamMembers = [
     {
@@ -56,97 +51,60 @@ const Team = () => {
     }
   ];
 
-  const bubblePositions = [
-    { width: 80, height: 80, left: 10, top: 15, duration: 8 },
-    { width: 120, height: 120, left: 75, top: 25, duration: 12 },
-    { width: 60, height: 60, left: 45, top: 10, duration: 6 },
-    { width: 100, height: 100, left: 20, top: 70, duration: 10 },
-    { width: 90, height: 90, left: 85, top: 60, duration: 9 },
-    { width: 70, height: 70, left: 5, top: 45, duration: 7 },
-    { width: 110, height: 110, left: 60, top: 80, duration: 11 },
-    { width: 50, height: 50, left: 90, top: 15, duration: 5 },
-    { width: 85, height: 85, left: 15, top: 35, duration: 8.5 },
-    { width: 95, height: 95, left: 70, top: 50, duration: 9.5 },
-  ];
-
   return (
-    <>
-      <style>
-        {`
-          @keyframes bubble-rise {
-            0% {
-              transform: translateY(100vh);
-              opacity: 0;
-            }
-            10% {
-              opacity: 0.3;
-            }
-            90% {
-              opacity: 0.3;
-            }
-            100% {
-              transform: translateY(-200px);
-              opacity: 0;
-            }
-          }
-          .bubble-animation {
-            animation: bubble-rise linear infinite;
-          }
-        `}
-      </style>
-      <div className="min-h-screen bg-white relative overflow-hidden">
-        {/* Bubble background */}
-        <div className="absolute inset-0 pointer-events-none" key={bubbleKey}>
-          {bubblePositions.map((bubble, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-blue-100 opacity-30 bubble-animation"
-              style={{
-                width: `${bubble.width}px`,
-                height: `${bubble.height}px`,
-                left: `${bubble.left}%`,
-                animationDuration: `${bubble.duration}s`,
-                animationDelay: `${i * 0.5}s`,
-              }}
-            />
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Bubble background */}
+      <div className="absolute inset-0 pointer-events-none">
+        {bubbles.map((bubble) => (
+          <div
+            key={bubble.id}
+            className="absolute rounded-full bg-blue-100"
+            style={{
+              width: `${bubble.size}px`,
+              height: `${bubble.size}px`,
+              left: `${bubble.x}%`,
+              top: `${bubble.y}px`,
+              opacity: bubble.opacity,
+              transform: 'translateX(-50%)',
+            }}
+          />
+        ))}
+      </div>
+
+      <Navigation />
+      
+      <div className="max-w-6xl mx-auto py-16 px-8 relative z-10">
+        <div className="text-center mb-16">
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">About Us</h1>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Meet the talented individuals who make Qlfy's success possible. Our diverse team 
+            brings together expertise from various fields to deliver exceptional results.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          {teamMembers.map((member, index) => (
+            <div key={index} className="text-center">
+              <Avatar className="w-32 h-32 mx-auto mb-6">
+                {member.image ? (
+                  <AvatarImage 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="object-cover object-center w-full h-full"
+                  />
+                ) : null}
+                <AvatarFallback className="text-white text-2xl font-bold">
+                  {member.initials}
+                </AvatarFallback>
+              </Avatar>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
+              <h4 className="text-blue-600 font-medium mb-4">{member.role}</h4>
+              <p className="text-gray-600 leading-relaxed">{member.description}</p>
+            </div>
           ))}
         </div>
-
-        <Navigation />
-        
-        <div className="max-w-6xl mx-auto py-16 px-8 relative z-10">
-          <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-gray-900 mb-6">About Us</h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Meet the talented individuals who make Qlfy's success possible. Our diverse team 
-              brings together expertise from various fields to deliver exceptional results.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {teamMembers.map((member, index) => (
-              <div key={index} className="text-center">
-                <Avatar className="w-32 h-32 mx-auto mb-6">
-                  {member.image ? (
-                    <AvatarImage 
-                      src={member.image} 
-                      alt={member.name} 
-                      className="object-cover object-center w-full h-full"
-                    />
-                  ) : null}
-                  <AvatarFallback className="text-white text-2xl font-bold">
-                    {member.initials}
-                  </AvatarFallback>
-                </Avatar>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
-                <h4 className="text-blue-600 font-medium mb-4">{member.role}</h4>
-                <p className="text-gray-600 leading-relaxed">{member.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
-    </>
+    </div>
   );
 };
 
