@@ -98,11 +98,6 @@ const Index = () => {
               achieve their goals through innovative solutions and expert guidance.
             </p>
             <div className="flex gap-4 justify-center">
-              <Link to="/team">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
-                  Our Team <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
               <Link to="/contact">
                 <Button size="lg" variant="outline">
                   Get Started
