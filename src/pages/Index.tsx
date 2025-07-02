@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -95,16 +94,8 @@ const Index = () => {
               Welcome to Qlfy
             </h2>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Your partner in qualification and excellence. We help businesses and individuals 
-              achieve their goals through innovative solutions and expert guidance.
+              Here we help consumers get better prequalified lending decisions
             </p>
-            <div className="flex gap-4 justify-center">
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-md mx-auto">
-                <p className="text-lg text-blue-800 font-medium">
-                  Here we help consumers get better prequalified lending decisions
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Features Section */}
