@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <nav className="flex items-center justify-between p-6 bg-blue-50 shadow-sm">
       <div className="flex items-center">
-        <Link to="/" className="flex items-center bg-blue-50 px-3 py-2 rounded-lg">
+        <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/8ba74544-554d-4d02-935f-9dedc0361106.png" 
             alt="Qlfy Logo" 
