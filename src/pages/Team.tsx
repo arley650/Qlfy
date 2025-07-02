@@ -61,7 +61,7 @@ const Team = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {teamMembers.map((member, index) => (
             <div key={index} className="text-center">
-              <Avatar className="w-32 h-32 mx-auto mb-6 bg-blue-600 text-white text-2xl font-bold">
+              <Avatar className="w-32 h-32 mx-auto mb-6">
                 {member.image ? (
                   <AvatarImage 
                     src={member.image} 
