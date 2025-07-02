@@ -1,4 +1,3 @@
-
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -61,7 +60,11 @@ const Team = () => {
             <div key={index} className="text-center">
               <Avatar className="w-32 h-32 mx-auto mb-6 bg-blue-600 text-white text-2xl font-bold">
                 {member.image ? (
-                  <AvatarImage src={member.image} alt={member.name} />
+                  <AvatarImage 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="object-cover object-center w-full h-full"
+                  />
                 ) : null}
                 <AvatarFallback className="bg-blue-600 text-white text-2xl font-bold">
                   {member.initials}
