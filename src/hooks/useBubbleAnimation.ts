@@ -20,7 +20,7 @@ export const useBubbleAnimation = (bubbleCount: number = 10) => {
       x: Math.random() * 100,
       y: window.innerHeight + Math.random() * 200,
       size: 50 + Math.random() * 70,
-      speed: 0.5 + Math.random() * 1,
+      speed: 2 + Math.random() * 3, // Increased from 0.5-1.5 to 2-5
       opacity: 0.1 + Math.random() * 0.2,
     }));
     
@@ -42,7 +42,7 @@ export const useBubbleAnimation = (bubbleCount: number = 10) => {
           };
         })
       );
-    }, 16); // ~60fps
+    }, 12); // Reduced from 16ms to 12ms for smoother/faster animation
 
     return () => clearInterval(animationInterval);
   }, [bubbleCount]);
