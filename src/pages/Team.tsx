@@ -1,3 +1,4 @@
+
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -35,7 +36,8 @@ const Team = () => {
       initials: "MD",
       name: "Matt Denman",
       role: "Founder, backer, Director",
-      description: "Cofounder of HD Decisions and Podium"
+      description: "Cofounder of HD Decisions and Podium",
+      image: "/lovable-uploads/1f54cfdc-8abf-439f-92f6-0449c1e57eef.png"
     },
     {
       initials: "MH",
