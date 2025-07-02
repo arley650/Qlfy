@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 
@@ -45,7 +44,7 @@ const TermsOfUse = () => {
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">1.3 Eligibility Services</h3>
           <p>We use publicly available data and data provided by credit agencies, individuals and brokers to calculate the chances of individuals successfully obtaining certain financial products from a prospective lender. We can help you search for loan rates that are currently available on the market, filtered and tailored to your requirements and circumstances, such as term, amount, and loan to property value percentage (LTV) (our "Services"). Any rates we display are based on your requirements only, and a full eligibility check will be required with the selected lender to ensure eligibility for a given Product.</p>
           
-          <p>Our Services have been built in partnership with a trusted service provider, Equifax Limited. If you use our Services, we will pass your data to Equifax Limited to enable them to retrieve your credit information from the Equifax credit file. They will use a quotation or "soft" credit search that will not harm your credit score and only you can see. For the terms and conditions associated with Equifax Limited see our Privacy Policy: Qualifi Solutions Privacy Policy V1.2 Website Version.docx</p>
+          <p>Our Services have been built in partnership with a trusted service provider, Equifax Limited. If you use our Services, we will pass your data to Equifax Limited to enable them to retrieve your credit information from the Equifax credit file. They will use a quotation or "soft" credit search that will not harm your credit score and only you can see. For the terms and conditions associated with Equifax Limited see our Privacy Policy: <a href="/privacy-policy" className="text-blue-600 hover:underline">Qualifi Solutions Privacy Policy</a></p>
           
           <p>In order to help you progress your application for a Product we may pass your data to brokers who will follow up with a phone call if they have consent to do so.</p>
           
@@ -73,7 +72,7 @@ const TermsOfUse = () => {
           
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">1.8 How to contact us</h3>
           <p>If you have any questions regarding our Terms of Use, or would like to contact us for any other reason, you may do so:</p>
-          <p><strong>By email:</strong> contact@qualifisolutions.io</p>
+          <p><strong>By email:</strong> <a href="mailto:contact@qualifisolutions.io" className="text-blue-600 hover:underline">contact@qualifisolutions.io</a></p>
           <p><strong>By post:</strong> Qualifi Solutions, 4th Floor, Market Square House, St James's Street, Nottingham, NG1 6FG</p>
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">2. Website and Services content</h2>
@@ -165,12 +164,12 @@ const TermsOfUse = () => {
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">9. Complaints</h2>
           
           <p><strong>9.1</strong> We aim to provide you with the most accurate score that we can. If you are unhappy with our Services for any reason, please contact us:</p>
-          <p><strong>By email:</strong> contact@qualifisolutions.io</p>
+          <p><strong>By email:</strong> <a href="mailto:contact@qualifisolutions.io" className="text-blue-600 hover:underline">contact@qualifisolutions.io</a></p>
           <p><strong>By post:</strong> Qualifi Solutions, 4th Floor, Market Square House, St James's Street, Nottingham, NG1 6FG</p>
           
           <p><strong>9.2</strong> After we have received your complaint and had an opportunity to investigate your concerns, we will issue you with a final response.</p>
           
-          <p><strong>9.3</strong> If you are not satisfied with our response and if your complaint relates to how we have handled your personal data, you may have the right to refer your complaint to the Information Commissioner's Office (<a href="https://ico.org.uk/concerns/" className="text-blue-600 hover:underline">https://ico.org.uk/concerns/</a>).</p>
+          <p><strong>9.3</strong> If you are not satisfied with our response and if your complaint relates to how we have handled your personal data, you may have the right to refer your complaint to the Information Commissioner's Office (<a href="https://ico.org.uk/concerns/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://ico.org.uk/concerns/</a>).</p>
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">10. Legal</h2>
           

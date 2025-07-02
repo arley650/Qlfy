@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -65,7 +64,7 @@ const PrivacyPolicy = () => {
           
           <p><strong>2.2</strong> We are the data controller of the personal data that we collect about you. This means that we are the company responsible for deciding how your data is processed.</p>
           
-          <p><strong>2.3</strong> If you have any questions relating to this Privacy Policy, our use of your personal data, if you want to contact our Data Protection Officer or if you have any related data protection queries, please write to our Data Protection Officer at contact@qualifisolutions.io or by post at Qualifi Solutions, 4th Floor, Market Square House, St James's Street, Nottingham, NG1 6FG.</p>
+          <p><strong>2.3</strong> If you have any questions relating to this Privacy Policy, our use of your personal data, if you want to contact our Data Protection Officer or if you have any related data protection queries, please write to our Data Protection Officer at <a href="mailto:contact@qualifisolutions.io" className="text-blue-600 hover:underline">contact@qualifisolutions.io</a> or by post at Qualifi Solutions, 4th Floor, Market Square House, St James's Street, Nottingham, NG1 6FG.</p>
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">3. How we collect data</h2>
           
@@ -77,7 +76,7 @@ const PrivacyPolicy = () => {
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">3.2 From Service Providers</h3>
           <p>We use Service Providers (such as credit agencies who hold data on you themselves) to collect additional data relating to you. We combine this data with other sources of data to provide the Services.</p>
           
-          <p>If you use our Service, we will pass your information to Equifax Limited to enable them to retrieve your credit information from the Equifax credit file. They will use a quotation or "soft" credit search that will not harm your credit score and only you can see. For Equifax Limited's terms and conditions, please click here <a href="https://www.equifax.co.uk/About-us/Terms_of_use" className="text-blue-600 hover:underline">https://www.equifax.co.uk/About-us/Terms_of_use</a>.</p>
+          <p>If you use our Service, we will pass your information to Equifax Limited to enable them to retrieve your credit information from the Equifax credit file. They will use a quotation or "soft" credit search that will not harm your credit score and only you can see. For Equifax Limited's terms and conditions, please click here <a href="https://www.equifax.co.uk/About-us/Terms_of_use" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.equifax.co.uk/About-us/Terms_of_use</a>.</p>
           
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">3.3 From publicly available sources</h3>
           <p>We access publicly available data, including the electoral roll and shared credit performance data. We combine this data with other sources of data to provide the Services.</p>
@@ -122,20 +121,20 @@ const PrivacyPolicy = () => {
           
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">6.1 Secured loans brokers</h3>
           <p>In order to help you progress your application for a Product we may pass your data to relevant brokers.</p>
-          <p>Our current secured loans broker is: <a href="https://www.fluentmoney.co.uk/data-protection/" className="text-blue-600 hover:underline">https://www.fluentmoney.co.uk/data-protection/</a></p>
+          <p>Our current secured loans broker is: <a href="https://www.fluentmoney.co.uk/data-protection/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.fluentmoney.co.uk/data-protection/</a></p>
           
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">6.2 Service Providers</h3>
           <p>We engage Service Providers to help us provide certain services and/or functionality, such as obtaining specific financial information.</p>
-          <p>Our current Service Provider is: <a href="https://www.equifax.co.uk/About-us/Terms_of_use" className="text-blue-600 hover:underline">https://www.equifax.co.uk/About-us/Terms_of_use</a></p>
+          <p>Our current Service Provider is: <a href="https://www.equifax.co.uk/About-us/Terms_of_use" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.equifax.co.uk/About-us/Terms_of_use</a></p>
           
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">6.3 Partners</h3>
           <p>We share your data with our trusted Partners to enable them to display you an eligibility score for certain Products.</p>
           <p>Our current Partners are:</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li><a href="https://www.moneysupermarket.com/legal/terms/" className="text-blue-600 hover:underline">https://www.moneysupermarket.com/legal/terms/</a></li>
-            <li><a href="https://www.moneysavingexpert.com/site/terms-conditions/" className="text-blue-600 hover:underline">https://www.moneysavingexpert.com/site/terms-conditions/</a></li>
-            <li><a href="https://www.clearscore.com/terms" className="text-blue-600 hover:underline">https://www.clearscore.com/terms</a></li>
-            <li><a href="https://www.comparethemarket.com/information/terms-and-conditions/" className="text-blue-600 hover:underline">https://www.comparethemarket.com/information/terms-and-conditions/</a></li>
+            <li><a href="https://www.moneysupermarket.com/legal/terms/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.moneysupermarket.com/legal/terms/</a></li>
+            <li><a href="https://www.moneysavingexpert.com/site/terms-conditions/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.moneysavingexpert.com/site/terms-conditions/</a></li>
+            <li><a href="https://www.clearscore.com/terms" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.clearscore.com/terms</a></li>
+            <li><a href="https://www.comparethemarket.com/information/terms-and-conditions/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.comparethemarket.com/information/terms-and-conditions/</a></li>
           </ul>
           
           <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-3">6.4 Regulators</h3>
@@ -163,7 +162,7 @@ const PrivacyPolicy = () => {
             <li>For market research and analysis. This helps us to regularly review and improve the Services we provide. Where possible data that we use/provide in this way will be in an anonymised format.</li>
           </ul>
           
-          <p><strong>7.5</strong> You have the right to object to our use of your data for these legitimate interests. If you raise an objection, we will stop processing your data unless very exceptional circumstances apply, in which case we will let you know why we are continuing to process your data. If you wish to exercise this right, please contact our Data Protection Officer at contact@qualifisolutions.io or by post at Qualifi Solutions, 4th Floor, Market Square House, St James's Street, Nottingham, NG1 6FG.</p>
+          <p><strong>7.5</strong> You have the right to object to our use of your data for these legitimate interests. If you raise an objection, we will stop processing your data unless very exceptional circumstances apply, in which case we will let you know why we are continuing to process your data. If you wish to exercise this right, please contact our Data Protection Officer at <a href="mailto:contact@qualifisolutions.io" className="text-blue-600 hover:underline">contact@qualifisolutions.io</a> or by post at Qualifi Solutions, 4th Floor, Market Square House, St James's Street, Nottingham, NG1 6FG.</p>
 
           <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">8. Data Security</h2>
           
@@ -199,7 +198,7 @@ const PrivacyPolicy = () => {
           <p>You have the right to have your personal data erased when it is no longer necessary for the purposes for which it was collected. This right also applies if you withdraw your consent for data processing or object to the processing, provided there are no overriding legitimate grounds to continue processing the data. Additionally, your personal data will be erased to comply with legal obligations. We will fulfil your request for the right to be forgotten (or right to erasure) within 28 days from the date, we receive and acknowledge your request.</p>
           
           <p><strong>10.9</strong> If you would like to exercise any of your rights, have any questions, or would like to make a complaint, you may do so:</p>
-          <p><strong>By email:</strong> contact@qualifisolutions.io</p>
+          <p><strong>By email:</strong> <a href="mailto:contact@qualifisolutions.io" className="text-blue-600 hover:underline">contact@qualifisolutions.io</a></p>
           <p><strong>By post:</strong> Qualifi Solutions, 4th Floor, Market Square House, St James's Street, Nottingham, NG1 6FG</p>
           
           <p><strong>10.10</strong> If you are not satisfied with the resolution of any complaint you make in relation to your personal data then you may be able to refer your complaint to the Information Commissioner's Office (ICO).</p>
