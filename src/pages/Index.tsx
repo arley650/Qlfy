@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -7,8 +8,12 @@ import { ArrowRight, Users, Target, Zap } from "lucide-react";
 
 const Index = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [bubbleKey, setBubbleKey] = useState(0);
 
   useEffect(() => {
+    // Reset bubble animations when component mounts
+    setBubbleKey(prev => prev + 1);
+    
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -68,7 +73,7 @@ const Index = () => {
         </div>
 
         {/* Bubble background */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none" key={bubbleKey}>
           {bubblePositions.map((bubble, i) => (
             <div
               key={i}

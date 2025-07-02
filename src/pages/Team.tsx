@@ -1,8 +1,16 @@
 
+import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const Team = () => {
+  const [bubbleKey, setBubbleKey] = useState(0);
+
+  useEffect(() => {
+    // Reset bubble animations when component mounts
+    setBubbleKey(prev => prev + 1);
+  }, []);
+
   const teamMembers = [
     {
       initials: "RB",
@@ -88,7 +96,7 @@ const Team = () => {
       </style>
       <div className="min-h-screen bg-white relative overflow-hidden">
         {/* Bubble background */}
-        <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 pointer-events-none" key={bubbleKey}>
           {bubblePositions.map((bubble, i) => (
             <div
               key={i}
