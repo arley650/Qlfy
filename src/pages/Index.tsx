@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -154,7 +155,7 @@ const Index = () => {
       </div>
 
       {/* Footer Section */}
-      <div className="bg-white py-16 mt-16 relative z-10 border-t border-gray-200">
+      <div className="bg-blue-50 py-16 mt-16 relative z-10 border-t border-gray-200">
         <div className="max-w-6xl mx-auto px-8">
           {/* Logo and Brand */}
           <div className="text-center mb-12">
