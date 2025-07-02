@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -175,9 +176,58 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Dark blue bottom section */}
-      <div className="bg-blue-800 h-32 mt-16 relative z-10 flex items-center justify-center">
-        <p className="text-white text-lg">Ready to get qualified? Let's start your journey.</p>
+      {/* Footer Section */}
+      <div className="bg-white py-16 mt-16 relative z-10 border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-8">
+          {/* Logo and Brand */}
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center mb-8">
+              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4">
+                <div className="text-white font-bold text-sm">
+                  <div className="flex flex-col items-center">
+                    <div className="w-8 h-1 bg-white mb-1"></div>
+                    <div className="w-6 h-1 bg-white mb-1"></div>
+                    <div className="w-4 h-1 bg-white mb-1"></div>
+                    <div className="w-8 h-1 bg-white"></div>
+                  </div>
+                </div>
+              </div>
+              <h2 className="text-4xl font-bold text-black">QualifiSolutions.io</h2>
+            </div>
+          </div>
+
+          {/* Contact and Links */}
+          <div className="text-center mb-12">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <a href="https://linkedin.com" className="text-blue-500 hover:text-blue-600 flex items-center gap-2">
+                <span>🔗</span> LinkedIn
+              </a>
+              <a href="mailto:contact@qualifisolutions.io" className="text-black hover:text-gray-600 flex items-center gap-2">
+                <span>✉️</span> contact@qualifisolutions.io
+              </a>
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <a href="#" className="text-blue-500 hover:text-blue-600">Privacy Policy</a>
+              <a href="#" className="text-blue-500 hover:text-blue-600">Terms of Use</a>
+            </div>
+          </div>
+
+          {/* Back to top arrow */}
+          <div className="text-center mb-8">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="text-gray-400 hover:text-gray-600 text-2xl"
+            >
+              ↑
+            </button>
+          </div>
+
+          {/* Copyright */}
+          <div className="text-center">
+            <p className="text-gray-600">© 2023 Qualifi Solutions ltd. All rights reserved.</p>
+          </div>
+        </div>
       </div>
     </div>
   );
