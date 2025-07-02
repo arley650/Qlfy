@@ -1,5 +1,3 @@
-
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -39,13 +37,13 @@ const Index = () => {
         {bubbles.map((bubble) => (
           <div
             key={bubble.id}
-            className="absolute rounded-full bg-gradient-to-br from-blue-200/40 to-purple-200/40 backdrop-blur-sm"
+            className="absolute rounded-full bg-gradient-to-br from-blue-400/50 to-blue-600/60 backdrop-blur-sm"
             style={{
               width: `${bubble.size}px`,
               height: `${bubble.size}px`,
               left: `${bubble.x}%`,
               top: `${bubble.y}px`,
-              opacity: bubble.opacity * 0.6,
+              opacity: bubble.opacity * 0.8,
               transform: 'translateX(-50%)',
             }}
           />
@@ -247,4 +245,3 @@ const Index = () => {
 };
 
 export default Index;
-
