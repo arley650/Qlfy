@@ -1,3 +1,4 @@
+
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -14,7 +15,8 @@ const Team = () => {
       initials: "MFJ",
       name: "Marcus Ferguson Jones",
       role: "CEO",
-      description: "ex LOQBOX, totallymoney.com and Raylo"
+      description: "ex LOQBOX, totallymoney.com and Raylo",
+      image: "/lovable-uploads/8add4d7c-7092-45c6-9015-6ea3866467a3.png"
     },
     {
       initials: "GB",
