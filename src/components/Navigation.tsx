@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
@@ -14,8 +15,8 @@ const Navigation = () => {
         <Link to="/">
           <Button variant="ghost">Home</Button>
         </Link>
-        <Link to="/team">
-          <Button variant="ghost">Our Team</Button>
+        <Link to="/about-us">
+          <Button variant="ghost">About Us</Button>
         </Link>
       </div>
     </nav>

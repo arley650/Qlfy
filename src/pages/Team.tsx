@@ -48,7 +48,7 @@ const Team = () => {
       
       <div className="max-w-6xl mx-auto py-16 px-8">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Our Team</h1>
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">About Us</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Meet the talented individuals who make Qlfy's success possible. Our diverse team 
             brings together expertise from various fields to deliver exceptional results.
