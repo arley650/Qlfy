@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -6,7 +5,7 @@ import { useBubbleAnimation } from "../hooks/useBubbleAnimation";
 
 const Team = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const bubbles = useBubbleAnimation(10);
+  const bubbles = useBubbleAnimation(15);
 
   useEffect(() => {
     const handleScroll = () => {

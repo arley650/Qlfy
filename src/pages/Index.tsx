@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -9,7 +8,7 @@ import { useBubbleAnimation } from "../hooks/useBubbleAnimation";
 
 const Index = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const bubbles = useBubbleAnimation(10);
+  const bubbles = useBubbleAnimation(15);
 
   useEffect(() => {
     const handleScroll = () => {
