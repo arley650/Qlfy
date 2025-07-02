@@ -1,5 +1,4 @@
 
-
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -23,7 +22,8 @@ const Team = () => {
       initials: "GB",
       name: "Gary Buxton",
       role: "Operations Director",
-      description: "ex HD Decisions and Experian"
+      description: "ex HD Decisions and Experian",
+      image: "/lovable-uploads/4d7e8a5b-2f1c-4e3a-9b8d-6c5e9f2a1b3c.png"
     },
     {
       initials: "MW",
@@ -66,7 +66,7 @@ const Team = () => {
                   <AvatarImage 
                     src={member.image} 
                     alt={member.name} 
-                    className="object-cover object-top w-full h-full scale-110"
+                    className="object-cover object-center w-full h-full"
                   />
                 ) : null}
                 <AvatarFallback className="bg-blue-600 text-white text-2xl font-bold">
@@ -85,4 +85,3 @@ const Team = () => {
 };
 
 export default Team;
-
