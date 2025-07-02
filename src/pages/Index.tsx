@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -182,7 +183,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex items-center justify-center mb-8">
               <img 
-                src="/lovable-uploads/dff4c53a-4d1a-4531-afe6-712ae150cc6f.png" 
+                src="/lovable-uploads/0a423f79-bdf0-4da0-907e-b8c74529af94.png" 
                 alt="Qlfy Logo" 
                 className="h-20 w-auto mr-4 filter brightness-110"
               />
