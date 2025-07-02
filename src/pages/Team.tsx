@@ -5,40 +5,40 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 const Team = () => {
   const teamMembers = [
     {
-      initials: "JD",
-      name: "John Doe",
-      role: "Chief Executive Officer",
-      description: "Visionary leader with 15+ years of experience in financial technology and business strategy."
+      initials: "RB",
+      name: "Richard Barber",
+      role: "Chief Commercial Officer",
+      description: "Ex Money Saving Expert and Everything Financial"
     },
     {
-      initials: "SM",
-      name: "Sarah Martinez",
-      role: "Chief Technology Officer",
-      description: "Expert software architect specializing in scalable systems and innovative solutions."
+      initials: "MFJ",
+      name: "Marcus Ferguson Jones",
+      role: "CEO",
+      description: "ex LOQBOX, totallymoney.com and Raylo"
     },
     {
-      initials: "MJ",
-      name: "Michael Johnson",
-      role: "Head of Operations",
-      description: "Operations specialist focused on efficiency and process optimization across all departments."
+      initials: "GB",
+      name: "Gary Buxton",
+      role: "Operations Director",
+      description: "ex HD Decisions and Experian"
     },
     {
-      initials: "EW",
-      name: "Emily Wilson",
-      role: "Lead Data Scientist",
-      description: "Data analytics expert with deep expertise in machine learning and predictive modeling."
+      initials: "MW",
+      name: "Mark Wakeling",
+      role: "CTO",
+      description: "ex Capital One and Experian"
     },
     {
-      initials: "RT",
-      name: "Robert Taylor",
-      role: "Senior Developer",
-      description: "Full-stack developer with passion for creating robust and user-friendly applications."
+      initials: "MD",
+      name: "Matt Denman",
+      role: "Founder, backer, Director",
+      description: "Cofounder of HD Decisions and Podium"
     },
     {
-      initials: "LB",
-      name: "Lisa Brown",
-      role: "Product Manager",
-      description: "Product strategy leader focused on delivering exceptional user experiences and business value."
+      initials: "MH",
+      name: "Mark Hawkins",
+      role: "Board Member",
+      description: "Cofounder of HD Decisions & Factor-50"
     }
   ];
 
