@@ -28,7 +28,8 @@ const Team = () => {
       initials: "MW",
       name: "Mark Wakeling",
       role: "CTO",
-      description: "ex Capital One and Experian"
+      description: "ex Capital One and Experian",
+      image: "/lovable-uploads/f21af9b9-eb37-497f-aeb1-dfa30e5297df.png"
     },
     {
       initials: "MD",
@@ -68,7 +69,7 @@ const Team = () => {
                     className="object-cover object-center w-full h-full"
                   />
                 ) : null}
-                <AvatarFallback className="bg-blue-600 text-white text-2xl font-bold">
+                <AvatarFallback className="text-white text-2xl font-bold">
                   {member.initials}
                 </AvatarFallback>
               </Avatar>
