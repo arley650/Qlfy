@@ -10,7 +10,7 @@ const Navigation = () => {
           <img 
             src="/lovable-uploads/8ba74544-554d-4d02-935f-9dedc0361106.png" 
             alt="Qlfy Logo" 
-            className="h-12 w-32"
+            className="h-12 w-auto"
           />
         </Link>
       </div>
