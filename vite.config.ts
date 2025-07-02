@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => ({
       'X-Content-Type-Options': 'nosniff',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
       'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+      // More permissive CSP for development to allow hot reload and dev tools
       'Content-Security-Policy': mode === 'development' 
         ? "default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: ws: wss:; img-src 'self' data: blob: https:; font-src 'self' data:;"
         : "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; connect-src 'self' https:; frame-ancestors 'none';"
