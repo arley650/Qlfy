@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -98,11 +99,11 @@ const Index = () => {
               achieve their goals through innovative solutions and expert guidance.
             </p>
             <div className="flex gap-4 justify-center">
-              <Link to="/contact">
-                <Button size="lg" variant="outline">
-                  Get Started
-                </Button>
-              </Link>
+              <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-md mx-auto">
+                <p className="text-lg text-blue-800 font-medium">
+                  Here we help consumers get better prequalified lending decisions
+                </p>
+              </div>
             </div>
           </div>
 
