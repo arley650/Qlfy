@@ -1,4 +1,5 @@
 
+
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -65,7 +66,7 @@ const Team = () => {
                   <AvatarImage 
                     src={member.image} 
                     alt={member.name} 
-                    className="object-cover object-center w-full h-full"
+                    className="object-cover object-top w-full h-full scale-110"
                   />
                 ) : null}
                 <AvatarFallback className="bg-blue-600 text-white text-2xl font-bold">
@@ -84,3 +85,4 @@ const Team = () => {
 };
 
 export default Team;
+
