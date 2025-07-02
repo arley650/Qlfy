@@ -207,7 +207,7 @@ const Index = () => {
           <div className="text-center mb-16">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
               <a 
-                href="https://www.linkedin.com" 
+                href="https://www.linkedin.com/company/qualifi-solutions/about/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 flex items-center gap-3 transition-colors duration-300 text-lg"
