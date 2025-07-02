@@ -1,4 +1,5 @@
 
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -65,7 +66,7 @@ const Index = () => {
             Welcome to Qlfy
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Revolutionizing how consumers get better prequalified lending decisions with cutting-edge technology and unparalleled expertise.
+            Revolutionising how consumers get better prequalified lending decisions with cutting-edge technology and unparalleled expertise.
           </p>
         </div>
 
@@ -246,3 +247,4 @@ const Index = () => {
 };
 
 export default Index;
+
