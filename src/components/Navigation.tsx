@@ -8,7 +8,7 @@ const Navigation = () => {
       <div className="flex items-center">
         <Link to="/" className="flex items-center group">
           <img 
-            src="/lovable-uploads/88b18757-4434-4600-8c2d-115eec9731da.png" 
+            src="/lovable-uploads/eca94cef-dac6-4155-b816-22d7bc48dede.png" 
             alt="Qlfy Logo" 
             className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
           />
