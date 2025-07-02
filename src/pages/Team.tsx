@@ -1,4 +1,3 @@
-
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -23,7 +22,7 @@ const Team = () => {
       name: "Gary Buxton",
       role: "Operations Director",
       description: "ex HD Decisions and Experian",
-      image: "/lovable-uploads/4d7e8a5b-2f1c-4e3a-9b8d-6c5e9f2a1b3c.png"
+      image: "/lovable-uploads/687064e9-fdb4-4dd3-b8c6-aa5b18d0a61a.png"
     },
     {
       initials: "MW",
