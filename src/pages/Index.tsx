@@ -206,7 +206,12 @@ const Index = () => {
           {/* Contact and Links */}
           <div className="text-center mb-16">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-              <a href="https://linkedin.com" className="text-blue-400 hover:text-blue-300 flex items-center gap-3 transition-colors duration-300 text-lg">
+              <a 
+                href="https://www.linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 flex items-center gap-3 transition-colors duration-300 text-lg"
+              >
                 <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold">in</span>
                 </div>
