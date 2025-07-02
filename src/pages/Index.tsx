@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -37,7 +38,7 @@ const Index = () => {
         {bubbles.map((bubble) => (
           <div
             key={bubble.id}
-            className="absolute rounded-full bg-blue-100"
+            className="absolute rounded-full bg-blue-300"
             style={{
               width: `${bubble.size}px`,
               height: `${bubble.size}px`,
