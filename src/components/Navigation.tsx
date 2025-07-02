@@ -4,32 +4,26 @@ import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   return (
-    <nav className="flex items-center justify-between p-6 bg-white/80 backdrop-blur-md shadow-sm border-b border-white/20 sticky top-0 z-40">
+    <nav className="flex items-center justify-between p-6 bg-blue-50 shadow-sm">
       <div className="flex items-center">
-        <Link to="/" className="flex items-center group">
+        <Link to="/" className="flex items-center">
           <img 
             src="/lovable-uploads/bdadbcfa-ca89-48eb-a521-86ecd0fd3b8f.png" 
             alt="Qlfy Logo" 
-            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
+            className="h-12 w-auto"
           />
         </Link>
       </div>
       
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-6">
         <Link to="/">
-          <Button variant="ghost" className="text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-all duration-300 font-medium">
-            Home
-          </Button>
+          <Button variant="ghost">Home</Button>
         </Link>
         <Link to="/about-us">
-          <Button variant="ghost" className="text-slate-700 hover:text-slate-900 hover:bg-slate-100 transition-all duration-300 font-medium">
-            About Us
-          </Button>
+          <Button variant="ghost">About Us</Button>
         </Link>
         <Link to="/contact">
-          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-medium px-6">
-            Contact Us
-          </Button>
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white">Contact Us</Button>
         </Link>
       </div>
     </nav>

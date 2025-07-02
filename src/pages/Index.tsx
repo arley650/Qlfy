@@ -1,10 +1,9 @@
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Users, Target, Zap, CheckCircle } from "lucide-react";
+import { ArrowRight, Users, Target, Zap } from "lucide-react";
 import { useBubbleAnimation } from "../hooks/useBubbleAnimation";
 
 const Index = () => {
@@ -24,27 +23,27 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
-      {/* Modern Scroll Progress Bar */}
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 w-1 h-64 bg-slate-200 rounded-full z-50 shadow-sm">
+    <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Scroll Progress Bar */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 w-2 h-64 bg-blue-200 rounded-full z-50">
         <div 
-          className="bg-gradient-to-t from-blue-600 to-purple-600 rounded-full transition-all duration-300 ease-out w-full shadow-lg"
+          className="bg-blue-600 rounded-full transition-all duration-300 ease-out w-full"
           style={{ height: `${scrollProgress}%` }}
         />
       </div>
 
-      {/* Enhanced Bubble background */}
+      {/* Bubble background */}
       <div className="absolute inset-0 pointer-events-none">
         {bubbles.map((bubble) => (
           <div
             key={bubble.id}
-            className="absolute rounded-full bg-gradient-to-br from-blue-200/40 to-purple-200/40 backdrop-blur-sm"
+            className="absolute rounded-full bg-blue-300"
             style={{
               width: `${bubble.size}px`,
               height: `${bubble.size}px`,
               left: `${bubble.x}%`,
               top: `${bubble.y}px`,
-              opacity: bubble.opacity * 0.6,
+              opacity: bubble.opacity,
               transform: 'translateX(-50%)',
             }}
           />
@@ -54,195 +53,151 @@ const Index = () => {
       {/* Navigation */}
       <Navigation />
 
-      {/* Modern Hero Section */}
+      {/* Hero Section */}
       <div className="flex-1 p-8 relative z-10">
-        <div className="max-w-7xl mx-auto text-center mb-20">
-          <div className="inline-flex items-center bg-blue-50 border border-blue-200 rounded-full px-4 py-2 text-blue-700 text-sm font-medium mb-8">
-            <Zap className="w-4 h-4 mr-2" />
-            Next-Generation Lending Solutions
-          </div>
-          <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-8 leading-tight">
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <h2 className="text-5xl font-bold text-gray-900 mb-6">
             Welcome to Qlfy
-          </h1>
-          <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Revolutionizing how consumers get better prequalified lending decisions with cutting-edge technology and unparalleled expertise.
+          </h2>
+          <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+            Here we help consumers get better prequalified lending decisions
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300">
-              Get Started
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="border-2 border-slate-300 text-slate-700 hover:bg-slate-50 px-8 py-4 text-lg shadow-sm">
-              Learn More
-            </Button>
-          </div>
         </div>
 
-        {/* Modern Features Section */}
-        <div className="max-w-7xl mx-auto mb-20">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Why Choose Qlfy?
-            </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Experience the future of lending with our innovative approach to prequalification
-            </p>
-          </div>
+        {/* Features Section */}
+        <div className="max-w-6xl mx-auto mb-16">
+          <h3 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Why Choose Qlfy?
+          </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: Users,
-                title: "Expert Team",
-                description: "Our qualified professionals bring years of experience to help you succeed with personalized guidance.",
-                gradient: "from-blue-500 to-cyan-500"
-              },
-              {
-                icon: Target,
-                title: "Targeted Solutions",
-                description: "AI-powered customized approaches tailored to your specific needs and financial objectives.",
-                gradient: "from-purple-500 to-pink-500"
-              },
-              {
-                icon: Zap,
-                title: "Instant Results",
-                description: "Lightning-fast processes designed to deliver accurate results in seconds, not days.",
-                gradient: "from-emerald-500 to-teal-500"
-              }
-            ].map((feature, index) => (
-              <Card key={index} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white/80 backdrop-blur-sm">
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-slate-900">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-slate-600 text-base leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Users className="h-8 w-8 text-blue-600" />
+                </div>
+                <CardTitle>Expert Team</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Our qualified professionals bring years of experience to help you succeed.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Target className="h-8 w-8 text-blue-600" />
+                </div>
+                <CardTitle>Targeted Solutions</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Customized approaches tailored to your specific needs and objectives.
+                </CardDescription>
+              </CardContent>
+            </Card>
+
+            <Card className="text-center hover:shadow-lg transition-shadow">
+              <CardHeader>
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Zap className="h-8 w-8 text-blue-600" />
+                </div>
+                <CardTitle>Fast Results</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription>
+                  Efficient processes designed to deliver results quickly and effectively.
+                </CardDescription>
+              </CardContent>
+            </Card>
           </div>
         </div>
 
-        {/* Modern Belief Section */}
-        <div className="max-w-7xl mx-auto text-center mb-20">
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-12">
-            <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12">
-              Our Core Beliefs
-            </h3>
+        {/* Belief Section */}
+        <div className="max-w-6xl mx-auto text-center mb-16">
+          <h3 className="text-3xl font-bold text-black mb-8">
+            Here at Qlfy we believe....
+          </h3>
+          
+          {/* Three belief sections */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="text-left">
+              <h4 className="text-2xl font-semibold text-blue-800 mb-4">Consumers:</h4>
+              <ul className="text-gray-600 leading-relaxed space-y-2">
+                <li>• Need certainty about which products they can get before they apply</li>
+                <li>• Know the APR that they will be offered</li>
+                <li>• The credit limit on each product</li>
+                <li>• See all the products available with binary decisions</li>
+              </ul>
+            </div>
             
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-16">
-              {[
-                {
-                  title: "Consumers",
-                  color: "blue",
-                  items: [
-                    "Need certainty about which products they can get before they apply",
-                    "Know the APR that they will be offered",
-                    "The credit limit on each product",
-                    "See all the products available with binary decisions"
-                  ]
-                },
-                {
-                  title: "Distributors",
-                  color: "purple",
-                  items: [
-                    "Should not be charged for the provision eligibility services",
-                    "Understand why products are and are not available to their users",
-                    "Be provided high performing application journeys"
-                  ]
-                },
-                {
-                  title: "Lenders",
-                  color: "emerald",
-                  items: [
-                    "Need to understand and have control over which consumers are being filtered",
-                    "Never have to expose their lending IP to 3rd parties",
-                    "Should not be constrained from appearing in searches due to excessive bureau costs"
-                  ]
-                }
-              ].map((section, index) => (
-                <div key={index} className="text-left">
-                  <h4 className={`text-3xl font-bold text-${section.color}-600 mb-6 flex items-center`}>
-                    <div className={`w-3 h-3 bg-${section.color}-500 rounded-full mr-3`}></div>
-                    {section.title}
-                  </h4>
-                  <ul className="space-y-4">
-                    {section.items.map((item, itemIndex) => (
-                      <li key={itemIndex} className="flex items-start text-slate-700 leading-relaxed">
-                        <CheckCircle className={`h-5 w-5 text-${section.color}-500 mr-3 mt-0.5 flex-shrink-0`} />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <div className="text-left">
+              <h4 className="text-2xl font-semibold text-blue-800 mb-4">Distributors:</h4>
+              <ul className="text-gray-600 leading-relaxed space-y-2">
+                <li>• Should not be charged for the provision eligibility services</li>
+                <li>• Understand why products are and are not available to their users</li>
+                <li>• Be provided high performing application journeys</li>
+              </ul>
+            </div>
+            
+            <div className="text-left">
+              <h4 className="text-2xl font-semibold text-blue-800 mb-4">Lenders:</h4>
+              <ul className="text-gray-600 leading-relaxed space-y-2">
+                <li>• Need to understand and have control over which consumers are being filtered</li>
+                <li>• Never have to expose their lending IP to 3rd parties</li>
+                <li>• Should not be constrained from appearing in searches due to excessive bureau costs</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Modern Footer Section */}
-      <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-        <div className="max-w-7xl mx-auto px-8 relative">
+      {/* Footer Section */}
+      <div className="bg-blue-50 py-16 mt-16 relative z-10 border-t border-gray-200">
+        <div className="max-w-6xl mx-auto px-8">
           {/* Logo and Brand */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-8">
               <img 
                 src="/lovable-uploads/dff4c53a-4d1a-4531-afe6-712ae150cc6f.png" 
                 alt="Qlfy Logo" 
-                className="h-20 w-auto mr-4 filter brightness-110"
+                className="h-16 w-auto mr-4"
               />
-              <h2 className="text-5xl font-bold bg-gradient-to-r from-white to-slate-300 bg-clip-text text-transparent">
-                QualifiSolutions.io
-              </h2>
+              <h2 className="text-4xl font-bold text-black">QualifiSolutions.io</h2>
             </div>
           </div>
 
           {/* Contact and Links */}
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-              <a href="https://linkedin.com" className="text-blue-400 hover:text-blue-300 flex items-center gap-3 transition-colors duration-300 text-lg">
-                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">in</span>
-                </div>
-                LinkedIn
+              <a href="https://linkedin.com" className="text-blue-500 hover:text-blue-600 flex items-center gap-2">
+                <span>🔗</span> LinkedIn
               </a>
-              <a href="mailto:contact@qualifisolutions.io" className="text-slate-300 hover:text-white flex items-center gap-3 transition-colors duration-300 text-lg">
-                <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center">
-                  <span className="text-white">✉</span>
-                </div>
-                contact@qualifisolutions.io
+              <a href="mailto:contact@qualifisolutions.io" className="text-black hover:text-gray-600 flex items-center gap-2">
+                <span>✉️</span> contact@qualifisolutions.io
               </a>
             </div>
 
-            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
-              <Link to="/privacy-policy" className="text-slate-400 hover:text-white transition-colors duration-300 text-lg">
-                Privacy Policy
-              </Link>
-              <Link to="/terms-of-use" className="text-slate-400 hover:text-white transition-colors duration-300 text-lg">
-                Terms of Use
-              </Link>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <Link to="/privacy-policy" className="text-blue-500 hover:text-blue-600">Privacy Policy</Link>
+              <Link to="/terms-of-use" className="text-blue-500 hover:text-blue-600">Terms of Use</Link>
             </div>
           </div>
 
           {/* Back to top arrow */}
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 mx-auto group"
+              className="text-gray-400 hover:text-gray-600 text-2xl"
             >
-              <ArrowRight className="h-6 w-6 rotate-[-90deg] group-hover:scale-110 transition-transform duration-300" />
+              ↑
             </button>
           </div>
 
           {/* Copyright */}
-          <div className="text-center border-t border-slate-700 pt-8">
-            <p className="text-slate-400 text-lg">© 2023 Qualifi Solutions ltd. All rights reserved.</p>
+          <div className="text-center">
+            <p className="text-gray-600">© 2023 Qualifi Solutions ltd. All rights reserved.</p>
           </div>
         </div>
       </div>
