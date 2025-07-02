@@ -160,16 +160,11 @@ const Index = () => {
           {/* Logo and Brand */}
           <div className="text-center mb-12">
             <div className="flex items-center justify-center mb-8">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4">
-                <div className="text-white font-bold text-sm">
-                  <div className="flex flex-col items-center">
-                    <div className="w-8 h-1 bg-white mb-1"></div>
-                    <div className="w-6 h-1 bg-white mb-1"></div>
-                    <div className="w-4 h-1 bg-white mb-1"></div>
-                    <div className="w-8 h-1 bg-white"></div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/lovable-uploads/8d80864b-bba6-44c0-ba1b-12b0df5f51c1.png" 
+                alt="Qlfy Logo" 
+                className="h-16 w-auto mr-4"
+              />
               <h2 className="text-4xl font-bold text-black">QualifiSolutions.io</h2>
             </div>
           </div>
