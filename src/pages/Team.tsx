@@ -4,7 +4,20 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useBubbleAnimation } from "../hooks/useBubbleAnimation";
 
 const Team = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
   const bubbles = useBubbleAnimation(10);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+      setScrollProgress(scrollPercent);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const teamMembers = [
     {
@@ -53,6 +66,14 @@ const Team = () => {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
+      {/* Scroll Progress Bar */}
+      <div className="fixed right-4 top-1/2 transform -translate-y-1/2 w-2 h-64 bg-blue-200 rounded-full z-50">
+        <div 
+          className="bg-blue-600 rounded-full transition-all duration-300 ease-out w-full"
+          style={{ height: `${scrollProgress}%` }}
+        />
+      </div>
+
       {/* Bubble background */}
       <div className="absolute inset-0 pointer-events-none">
         {bubbles.map((bubble) => (
