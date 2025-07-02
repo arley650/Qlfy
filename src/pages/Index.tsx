@@ -176,8 +176,7 @@ const Index = () => {
       </div>
 
       {/* Modern Footer Section */}
-      <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+      <div className="bg-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-8 relative">
           {/* Logo and Brand */}
           <div className="text-center mb-16">
