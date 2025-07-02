@@ -1,4 +1,3 @@
-
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
@@ -43,7 +42,8 @@ const Team = () => {
       initials: "MH",
       name: "Mark Hawkins",
       role: "Board Member",
-      description: "Cofounder of HD Decisions & Factor-50"
+      description: "Cofounder of HD Decisions & Factor-50",
+      image: "/lovable-uploads/ae1193f8-05ce-4c54-8f03-d28731076079.png"
     }
   ];
 
