@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -208,8 +207,8 @@ const Index = () => {
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-              <a href="#" className="text-blue-500 hover:text-blue-600">Privacy Policy</a>
-              <a href="#" className="text-blue-500 hover:text-blue-600">Terms of Use</a>
+              <Link to="/privacy-policy" className="text-blue-500 hover:text-blue-600">Privacy Policy</Link>
+              <Link to="/terms-of-use" className="text-blue-500 hover:text-blue-600">Terms of Use</Link>
             </div>
           </div>
 
