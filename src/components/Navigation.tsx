@@ -18,6 +18,9 @@ const Navigation = () => {
         <Link to="/about-us">
           <Button variant="ghost">About Us</Button>
         </Link>
+        <Link to="/contact">
+          <Button className="bg-blue-600 hover:bg-blue-700 text-white">Contact Us</Button>
+        </Link>
       </div>
     </nav>
   );
