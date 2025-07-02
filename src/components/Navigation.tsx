@@ -10,7 +10,7 @@ const Navigation = () => {
           <img 
             src="/lovable-uploads/eca94cef-dac6-4155-b816-22d7bc48dede.png" 
             alt="Qlfy Logo" 
-            className="h-18 w-auto transition-transform duration-300 group-hover:scale-105"
+            className="h-12 w-auto transition-transform duration-300 group-hover:scale-105"
           />
         </Link>
       </div>
