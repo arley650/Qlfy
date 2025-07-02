@@ -176,7 +176,7 @@ const Index = () => {
       </div>
 
       {/* Modern Footer Section */}
-      <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200">
+      <div className="py-20 mt-20 relative z-10 border-t border-slate-200" style={{ backgroundColor: '#3B82F6' }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
         <div className="max-w-7xl mx-auto px-8 relative">
           {/* Logo and Brand */}
@@ -200,15 +200,15 @@ const Index = () => {
                 href="https://www.linkedin.com/company/qualifi-solutions/about/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 flex items-center gap-3 transition-colors duration-300 text-lg"
+                className="text-blue-200 hover:text-white flex items-center gap-3 transition-colors duration-300 text-lg"
               >
-                <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center">
+                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold">in</span>
                 </div>
                 LinkedIn
               </a>
-              <a href="mailto:contact@qualifisolutions.io" className="text-slate-300 hover:text-white flex items-center gap-3 transition-colors duration-300 text-lg">
-                <div className="w-10 h-10 bg-slate-600 rounded-full flex items-center justify-center">
+              <a href="mailto:contact@qualifisolutions.io" className="text-slate-200 hover:text-white flex items-center gap-3 transition-colors duration-300 text-lg">
+                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                   <span className="text-white">✉</span>
                 </div>
                 contact@qualifisolutions.io
@@ -216,10 +216,10 @@ const Index = () => {
             </div>
 
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
-              <Link to="/privacy-policy" className="text-slate-400 hover:text-white transition-colors duration-300 text-lg">
+              <Link to="/privacy-policy" className="text-slate-200 hover:text-white transition-colors duration-300 text-lg">
                 Privacy Policy
               </Link>
-              <Link to="/terms-of-use" className="text-slate-400 hover:text-white transition-colors duration-300 text-lg">
+              <Link to="/terms-of-use" className="text-slate-200 hover:text-white transition-colors duration-300 text-lg">
                 Terms of Use
               </Link>
             </div>
@@ -229,15 +229,15 @@ const Index = () => {
           <div className="text-center mb-12">
             <button 
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="w-12 h-12 bg-slate-700 hover:bg-slate-600 rounded-full flex items-center justify-center text-slate-300 hover:text-white transition-all duration-300 mx-auto group"
+              className="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center text-white hover:text-white transition-all duration-300 mx-auto group"
             >
               <ArrowRight className="h-6 w-6 rotate-[-90deg] group-hover:scale-110 transition-transform duration-300" />
             </button>
           </div>
 
           {/* Copyright */}
-          <div className="text-center border-t border-slate-700 pt-8">
-            <p className="text-slate-400 text-lg">© 2023 Qualifi Solutions ltd. All rights reserved.</p>
+          <div className="text-center border-t border-white/20 pt-8">
+            <p className="text-slate-200 text-lg">© 2023 Qualifi Solutions ltd. All rights reserved.</p>
           </div>
         </div>
       </div>
