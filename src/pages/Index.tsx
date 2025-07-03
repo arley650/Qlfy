@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -102,7 +103,7 @@ const Index = () => {
               }
             ].map((feature, index) => {
               const CardComponent = (
-                <Card key={index} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white/80 backdrop-blur-sm">
+                <Card key={index} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white/80 backdrop-blur-sm h-full">
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
                   <CardHeader className="text-center pb-4">
                     <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
@@ -110,7 +111,7 @@ const Index = () => {
                     </div>
                     <CardTitle className="text-2xl font-bold text-slate-900">{feature.title}</CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-1">
                     <CardDescription className="text-slate-600 text-base leading-relaxed">
                       {feature.description}
                     </CardDescription>
@@ -119,7 +120,7 @@ const Index = () => {
               );
 
               return feature.link ? (
-                <Link key={index} to={feature.link} className="block">
+                <Link key={index} to={feature.link} className="block h-full">
                   {CardComponent}
                 </Link>
               ) : (
