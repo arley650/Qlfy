@@ -6,7 +6,7 @@ const Navigation = () => {
   return (
     <nav className="relative flex items-center justify-between p-6 backdrop-blur-md shadow-sm border-b border-white/20 sticky top-0 z-40 overflow-hidden">
       {/* Gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-blue-50 to-pink-50 opacity-90"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-blue-50 to-pink-50 opacity-30"></div>
       
       {/* White background behind logo */}
       <div className="absolute left-0 top-0 bottom-0 w-32 bg-white"></div>
