@@ -97,7 +97,8 @@ const Index = () => {
                 icon: Zap,
                 title: "Instant Results",
                 description: "Lightning-fast processes designed to deliver accurate results in seconds, not days.",
-                gradient: "from-emerald-500 to-teal-500"
+                gradient: "from-emerald-500 to-teal-500",
+                link: "/contact"
               }
             ].map((feature, index) => {
               const CardComponent = (
