@@ -188,6 +188,20 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Decorative Square Border */}
+      <div className="relative z-10 py-8">
+        <div className="flex justify-center items-center">
+          <div className="grid grid-cols-12 gap-2 max-w-7xl mx-auto px-8">
+            {Array.from({ length: 24 }, (_, i) => (
+              <div
+                key={i}
+                className="w-8 h-8 bg-gradient-to-br from-blue-500 to-pink-500 rounded-sm transition-all duration-300 hover:scale-125 hover:rotate-12 hover:shadow-lg cursor-pointer"
+              />
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Modern Footer Section */}
       <div className="bg-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-8 relative">
