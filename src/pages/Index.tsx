@@ -174,7 +174,7 @@ const Index = () => {
         </div>
 
         {/* Core Beliefs Section - Company values and philosophy */}
-        <div className="max-w-7xl mx-auto text-center mb-20 opacity-20 group-hover:opacity-80">
+        <div className="max-w-7xl mx-auto text-center mb-20 opacity-75">
           {/* Glassmorphism container with backdrop blur effect */}
           <div className="bg-white/60 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-12">
             <h3 className="text-4xl md:text-5xl font-bold text-slate-900 mb-12">
