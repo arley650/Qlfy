@@ -1,5 +1,4 @@
 
-
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -97,10 +96,10 @@ const Contact = () => {
         `}
       </style>
       <div className="min-h-screen bg-white relative overflow-hidden">
-        {/* Scroll Progress Bar */}
-        <div className="fixed right-4 top-1/2 transform -translate-y-1/2 w-2 h-64 bg-blue-200 rounded-full z-50">
+        {/* Fixed Scroll Progress Indicator - Updated to match home page styling */}
+        <div className="fixed right-6 top-1/2 transform -translate-y-1/2 w-1 h-64 bg-slate-200 rounded-full z-50 shadow-sm">
           <div 
-            className="bg-blue-600 rounded-full transition-all duration-300 ease-out w-full"
+            className="bg-gradient-to-t from-blue-600 to-purple-600 rounded-full transition-all duration-300 ease-out w-full shadow-lg"
             style={{ height: `${scrollProgress}%` }}
           />
         </div>
@@ -229,4 +228,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
