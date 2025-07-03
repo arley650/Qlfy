@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -92,7 +91,8 @@ const Index = () => {
                 icon: Target,
                 title: "Targeted Solutions",
                 description: "AI-powered customized approaches tailored to your specific needs and financial objectives.",
-                gradient: "from-purple-500 to-pink-500"
+                gradient: "from-purple-500 to-pink-500",
+                link: "/services"
               },
               {
                 icon: Zap,
