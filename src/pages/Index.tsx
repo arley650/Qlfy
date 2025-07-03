@@ -127,7 +127,7 @@ const Index = () => {
               {
                 icon: Target,
                 title: "Targeted Solutions",
-                description: "AI-powered customized approaches tailored to your specific needs and financial objectives.",
+                description: "We deliver targeted solutions that streamline eligibility, boost transparency, and replace outdated systems with smarter, data-driven innovation.",
                 gradient: "from-purple-500 to-pink-500",
                 link: "/services"
               },
