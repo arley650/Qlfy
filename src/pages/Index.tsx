@@ -188,37 +188,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Circle Transition Section */}
-      <div className="relative h-96 mb-0 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-800/50 to-transparent">
-          {/* Circles that transition from spread out at bottom to closer together at top */}
-          {Array.from({ length: 50 }, (_, i) => {
-            const row = Math.floor(i / 10);
-            const col = i % 10;
-            const yPosition = 100 - (row * 20); // Start from bottom
-            const spacing = Math.max(5, 20 - row * 3); // Closer together as we go up
-            const xPosition = col * spacing + (Math.random() * 10);
-            const size = 30 + Math.random() * 20; // Medium size circles
-            const opacity = Math.max(0.1, 0.8 - row * 0.15); // Fade out as we go up
-            
-            return (
-              <div
-                key={i}
-                className="absolute rounded-full bg-gradient-to-br from-blue-400/40 to-blue-600/60 backdrop-blur-sm"
-                style={{
-                  width: `${size}px`,
-                  height: `${size}px`,
-                  left: `${xPosition}%`,
-                  bottom: `${yPosition}%`,
-                  opacity: opacity,
-                  transform: 'translateX(-50%)',
-                }}
-              />
-            );
-          })}
-        </div>
-      </div>
-
       {/* Modern Footer Section */}
       <div className="bg-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-8 relative">
