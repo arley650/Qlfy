@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -27,9 +26,9 @@ const Index = () => {
   const [footerCircles] = useState(() => 
     Array.from({ length: 25 }, (_, i) => ({
       id: i,
-      size: 30 + Math.random() * 80, // Random size between 30px and 110px
+      size: 60 + Math.random() * 120, // Bigger circles: Random size between 60px and 180px
       left: Math.random() * 100, // Random horizontal position
-      top: Math.random() * 150, // Extended range to overlay into footer
+      top: Math.random() * 200, // Extended range to overlap more into footer
       opacity: 0.6 + Math.random() * 0.4, // Higher opacity between 0.6 and 1.0
     }))
   );
