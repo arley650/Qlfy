@@ -22,17 +22,6 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Generate static random circles for footer decoration - only once on initial render
-  const [footerCircles] = useState(() => 
-    Array.from({ length: 25 }, (_, i) => ({
-      id: i,
-      size: 60 + Math.random() * 120, // Bigger circles: Random size between 60px and 180px
-      left: Math.random() * 100, // Random horizontal position
-      top: -Math.random() * 30, // Position on the edge of footer (0 to -30px)
-      opacity: 0.6 + Math.random() * 0.4, // Higher opacity between 0.6 and 1.0
-    }))
-  );
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
       {/* Modern Scroll Progress Bar */}
@@ -199,26 +188,8 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Static Footer Circle Decoration - overlaying into footer */}
-      <div className="absolute bottom-0 left-0 right-0 h-80 overflow-hidden pointer-events-none z-40">
-        {footerCircles.map((circle) => (
-          <div
-            key={circle.id}
-            className="absolute rounded-full bg-white"
-            style={{
-              width: `${circle.size}px`,
-              height: `${circle.size}px`,
-              left: `${circle.left}%`,
-              top: `${circle.top}px`,
-              opacity: circle.opacity,
-              transform: 'translateX(-50%)',
-            }}
-          />
-        ))}
-      </div>
-
       {/* Modern Footer Section */}
-      <div className="bg-slate-900 py-20 relative z-10 border-t border-slate-200">
+      <div className="bg-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-8 relative">
           {/* Logo and Brand */}
           <div className="text-center mb-16">
