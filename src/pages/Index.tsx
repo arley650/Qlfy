@@ -237,7 +237,7 @@ const Index = () => {
       </div>
 
       {/* Footer Section - Dark theme with company info and navigation */}
-      <div className="bg-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200">
+      <div className="bg-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200 opacity-30">
         <div className="max-w-7xl mx-auto px-8 relative">
           
           {/* Brand Logo and Company Name */}
