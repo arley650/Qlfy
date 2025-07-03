@@ -186,10 +186,51 @@ const Index = () => {
             </div>
           </div>
         </div>
+
+        {/* Circles Transition Section */}
+        <div className="max-w-7xl mx-auto relative h-96 mb-0">
+          <div className="absolute inset-0 overflow-hidden">
+            {/* Generate circles with varying spacing */}
+            {Array.from({ length: 80 }, (_, i) => {
+              const row = Math.floor(i / 10);
+              const col = i % 10;
+              const progress = row / 7; // 8 rows total (0-7)
+              
+              // Spacing gets tighter as we go up (lower progress values)
+              const baseSpacing = 120;
+              const tightSpacing = 40;
+              const spacing = baseSpacing - (progress * (baseSpacing - tightSpacing));
+              
+              // Circle size varies slightly
+              const size = 8 + Math.random() * 4;
+              
+              // Position with calculated spacing
+              const x = (col * spacing) + (Math.random() * 20 - 10);
+              const y = row * (spacing * 0.6) + (Math.random() * 20 - 10);
+              
+              // Opacity decreases as we go up
+              const opacity = 0.8 - (progress * 0.6);
+              
+              return (
+                <div
+                  key={i}
+                  className="absolute rounded-full bg-gradient-to-br from-blue-200/60 to-slate-300/60"
+                  style={{
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    left: `${x}px`,
+                    bottom: `${y}px`,
+                    opacity: opacity,
+                  }}
+                />
+              );
+            })}
+          </div>
+        </div>
       </div>
 
       {/* Modern Footer Section */}
-      <div className="bg-slate-900 py-20 mt-20 relative z-10 border-t border-slate-200">
+      <div className="bg-slate-900 py-20 mt-0 relative z-10 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-8 relative">
           {/* Logo and Brand */}
           <div className="text-center mb-16">
