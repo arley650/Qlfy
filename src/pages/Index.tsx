@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -22,14 +23,16 @@ const Index = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Generate static random circles for footer decoration
-  const footerCircles = Array.from({ length: 25 }, (_, i) => ({
-    id: i,
-    size: 30 + Math.random() * 80, // Random size between 30px and 110px
-    left: Math.random() * 100, // Random horizontal position
-    top: Math.random() * 100, // Random vertical position within the decoration area
-    opacity: 0.6 + Math.random() * 0.4, // Higher opacity between 0.6 and 1.0
-  }));
+  // Generate static random circles for footer decoration - only once on initial render
+  const [footerCircles] = useState(() => 
+    Array.from({ length: 25 }, (_, i) => ({
+      id: i,
+      size: 30 + Math.random() * 80, // Random size between 30px and 110px
+      left: Math.random() * 100, // Random horizontal position
+      top: Math.random() * 100, // Random vertical position within the decoration area
+      opacity: 0.6 + Math.random() * 0.4, // Higher opacity between 0.6 and 1.0
+    }))
+  );
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
