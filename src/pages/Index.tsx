@@ -84,7 +84,8 @@ const Index = () => {
                 icon: Users,
                 title: "Expert Team",
                 description: "Our qualified professionals bring years of experience to help you succeed with personalized guidance.",
-                gradient: "from-blue-500 to-cyan-500"
+                gradient: "from-blue-500 to-cyan-500",
+                link: "/about-us"
               },
               {
                 icon: Target,
@@ -98,22 +99,32 @@ const Index = () => {
                 description: "Lightning-fast processes designed to deliver accurate results in seconds, not days.",
                 gradient: "from-emerald-500 to-teal-500"
               }
-            ].map((feature, index) => (
-              <Card key={index} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white/80 backdrop-blur-sm">
-                <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
-                <CardHeader className="text-center pb-4">
-                  <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                    <feature.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <CardTitle className="text-2xl font-bold text-slate-900">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-slate-600 text-base leading-relaxed">
-                    {feature.description}
-                  </CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+            ].map((feature, index) => {
+              const CardComponent = (
+                <Card key={index} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white/80 backdrop-blur-sm">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                  <CardHeader className="text-center pb-4">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${feature.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <feature.icon className="h-8 w-8 text-white" />
+                    </div>
+                    <CardTitle className="text-2xl font-bold text-slate-900">{feature.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-slate-600 text-base leading-relaxed">
+                      {feature.description}
+                    </CardDescription>
+                  </CardContent>
+                </Card>
+              );
+
+              return feature.link ? (
+                <Link key={index} to={feature.link} className="block">
+                  {CardComponent}
+                </Link>
+              ) : (
+                CardComponent
+              );
+            })}
           </div>
         </div>
 
