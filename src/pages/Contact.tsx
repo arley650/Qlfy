@@ -1,18 +1,44 @@
 
 import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
 import Navigation from "../components/Navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+
+const formSchema = z.object({
+  name: z.string().min(1, "Name is required").min(2, "Name must be at least 2 characters"),
+  email: z.string().min(1, "Email is required").email("Please enter a valid email address"),
+  subject: z.string().min(1, "Subject is required").min(3, "Subject must be at least 3 characters"),
+  message: z.string().optional(),
+});
+
+type FormData = z.infer<typeof formSchema>;
 
 const Contact = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+  const { toast } = useToast();
+
+  const form = useForm<FormData>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
   });
 
   useEffect(() => {
@@ -27,18 +53,13 @@ const Contact = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission logic here
+  const onSubmit = (data: FormData) => {
+    console.log('Form submitted:', data);
+    toast({
+      title: "Message sent!",
+      description: "Thank you for your message. We'll get back to you soon.",
+    });
+    form.reset();
   };
 
   const bubblePositions = [
@@ -113,75 +134,91 @@ const Contact = () => {
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-8 max-w-2xl mx-auto">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <Label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your name
-                  </Label>
-                  <Input
-                    id="name"
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <FormField
+                    control={form.control}
                     name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg border-gray-300"
-                    required
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Your name</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="Enter your full name"
+                            className="rounded-lg border-gray-300"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div>
-                  <Label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your email
-                  </Label>
-                  <Input
-                    id="email"
+                  <FormField
+                    control={form.control}
                     name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg border-gray-300"
-                    required
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Your email</FormLabel>
+                        <FormControl>
+                          <Input
+                            type="email"
+                            placeholder="Enter your email address"
+                            className="rounded-lg border-gray-300"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div>
-                  <Label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject
-                  </Label>
-                  <Input
-                    id="subject"
+                  <FormField
+                    control={form.control}
                     name="subject"
-                    type="text"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="w-full rounded-lg border-gray-300"
-                    required
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Subject</FormLabel>
+                        <FormControl>
+                          <Input
+                            placeholder="What is this about?"
+                            className="rounded-lg border-gray-300"
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div>
-                  <Label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                    Your message (optional)
-                  </Label>
-                  <Textarea
-                    id="message"
+                  <FormField
+                    control={form.control}
                     name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    className="w-full h-32 rounded-lg border-gray-300 resize-none"
-                    placeholder="Tell us more about your inquiry..."
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Your message (optional)</FormLabel>
+                        <FormControl>
+                          <Textarea
+                            className="h-32 rounded-lg border-gray-300 resize-none"
+                            placeholder="Tell us more about your inquiry..."
+                            {...field}
+                          />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </div>
 
-                <div className="text-center">
-                  <Button 
-                    type="submit" 
-                    className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium"
-                  >
-                    Submit
-                  </Button>
-                </div>
-              </form>
+                  <div className="text-center">
+                    <Button 
+                      type="submit" 
+                      className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium"
+                    >
+                      Submit
+                    </Button>
+                  </div>
+                </form>
+              </Form>
             </div>
           </div>
         </div>
