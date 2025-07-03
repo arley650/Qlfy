@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -23,12 +24,12 @@ const Index = () => {
   }, []);
 
   // Generate random circles for footer decoration
-  const footerCircles = Array.from({ length: 20 }, (_, i) => ({
+  const footerCircles = Array.from({ length: 25 }, (_, i) => ({
     id: i,
-    size: 20 + Math.random() * 60, // Random size between 20px and 80px
+    size: 30 + Math.random() * 80, // Random size between 30px and 110px
     left: Math.random() * 100, // Random horizontal position
     top: Math.random() * 100, // Random vertical position within the decoration area
-    opacity: 0.3 + Math.random() * 0.4, // Random opacity between 0.3 and 0.7
+    opacity: 0.6 + Math.random() * 0.4, // Higher opacity between 0.6 and 1.0
   }));
 
   return (
@@ -198,12 +199,12 @@ const Index = () => {
       </div>
 
       {/* Footer Circle Decoration */}
-      <div className="relative h-32 overflow-hidden">
+      <div className="relative h-40 overflow-hidden bg-gradient-to-t from-slate-100 to-transparent">
         <div className="absolute inset-0 pointer-events-none">
           {footerCircles.map((circle) => (
             <div
               key={circle.id}
-              className="absolute rounded-full bg-white"
+              className="absolute rounded-full bg-white shadow-lg border border-slate-200"
               style={{
                 width: `${circle.size}px`,
                 height: `${circle.size}px`,
