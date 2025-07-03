@@ -33,7 +33,7 @@ const Index = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   
   // Initialize 15 animated bubbles for the background effect
-  const bubbles = useBubbleAnimation(15);
+  const bubbles = useBubbleAnimation(150);
 
   // Effect hook to calculate and update scroll progress
   useEffect(() => {
