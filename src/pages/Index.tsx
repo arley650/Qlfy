@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -190,12 +191,12 @@ const Index = () => {
 
       {/* Decorative Square Border */}
       <div className="relative z-10 py-8">
-        <div className="flex justify-center items-center">
-          <div className="grid grid-cols-12 gap-2 max-w-7xl mx-auto px-8">
-            {Array.from({ length: 24 }, (_, i) => (
+        <div className="w-full">
+          <div className="grid grid-cols-24 gap-1 max-w-full px-4">
+            {Array.from({ length: 48 }, (_, i) => (
               <div
                 key={i}
-                className="w-8 h-8 bg-gradient-to-br from-blue-500 to-pink-500 rounded-sm transition-all duration-300 hover:scale-125 hover:rotate-12 hover:shadow-lg cursor-pointer"
+                className="w-6 h-6 bg-gradient-to-br from-slate-400 via-blue-500 to-purple-600 rounded-sm transition-all duration-300 hover:scale-125 hover:rotate-12 hover:shadow-lg cursor-pointer"
               />
             ))}
           </div>
