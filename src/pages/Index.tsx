@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -185,24 +184,6 @@ const Index = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Decorative Scale Border */}
-      <div className="relative z-10 py-8">
-        <div className="w-full overflow-hidden">
-          <div className="flex justify-center items-center gap-1 px-4">
-            {Array.from({ length: 24 }, (_, i) => (
-              <div
-                key={i}
-                className="w-12 h-6 bg-gradient-to-br from-slate-200 via-blue-400 to-purple-500 rounded-sm transition-all duration-500 hover:scale-150 hover:rotate-6 hover:translate-y-2 hover:shadow-xl cursor-pointer opacity-70 hover:opacity-100 hover:z-10 relative"
-                style={{
-                  transformOrigin: 'center bottom',
-                  animationDelay: `${i * 0.05}s`
-                }}
-              />
-            ))}
           </div>
         </div>
       </div>
