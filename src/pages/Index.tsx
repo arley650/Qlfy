@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -29,7 +28,7 @@ const Index = () => {
       id: i,
       size: 60 + Math.random() * 120, // Bigger circles: Random size between 60px and 180px
       left: Math.random() * 100, // Random horizontal position
-      top: -30 - Math.random() * 60, // Position so only half overlaps into footer
+      top: -Math.random() * 30, // Position on the edge of footer (0 to -30px)
       opacity: 0.6 + Math.random() * 0.4, // Higher opacity between 0.6 and 1.0
     }))
   );
@@ -201,7 +200,7 @@ const Index = () => {
       </div>
 
       {/* Static Footer Circle Decoration - overlaying into footer */}
-      <div className="absolute bottom-0 left-0 right-0 h-80 overflow-hidden pointer-events-none z-30">
+      <div className="absolute bottom-0 left-0 right-0 h-80 overflow-hidden pointer-events-none z-40">
         {footerCircles.map((circle) => (
           <div
             key={circle.id}
