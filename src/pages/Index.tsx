@@ -29,7 +29,7 @@ const Index = () => {
       id: i,
       size: 30 + Math.random() * 80, // Random size between 30px and 110px
       left: Math.random() * 100, // Random horizontal position
-      top: Math.random() * 100, // Random vertical position within the decoration area
+      top: Math.random() * 150, // Extended range to overlay into footer
       opacity: 0.6 + Math.random() * 0.4, // Higher opacity between 0.6 and 1.0
     }))
   );
@@ -200,13 +200,13 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Static Footer Circle Decoration */}
-      <div className="relative h-40 overflow-hidden bg-gradient-to-t from-slate-100 to-transparent">
-        <div className="absolute inset-0 pointer-events-none">
+      {/* Static Footer Circle Decoration - overlaying into footer */}
+      <div className="relative h-40 overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none z-20">
           {footerCircles.map((circle) => (
             <div
               key={circle.id}
-              className="absolute rounded-full bg-white shadow-lg border border-slate-200"
+              className="absolute rounded-full bg-white"
               style={{
                 width: `${circle.size}px`,
                 height: `${circle.size}px`,
