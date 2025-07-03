@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
@@ -28,7 +29,7 @@ const Index = () => {
       id: i,
       size: 60 + Math.random() * 120, // Bigger circles: Random size between 60px and 180px
       left: Math.random() * 100, // Random horizontal position
-      top: Math.random() * 300, // Extended range to overlap into footer
+      top: -30 - Math.random() * 60, // Position so only half overlaps into footer
       opacity: 0.6 + Math.random() * 0.4, // Higher opacity between 0.6 and 1.0
     }))
   );
@@ -209,7 +210,7 @@ const Index = () => {
               width: `${circle.size}px`,
               height: `${circle.size}px`,
               left: `${circle.left}%`,
-              top: `${circle.top}%`,
+              top: `${circle.top}px`,
               opacity: circle.opacity,
               transform: 'translateX(-50%)',
             }}
