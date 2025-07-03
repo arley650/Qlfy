@@ -28,7 +28,7 @@ const Index = () => {
       id: i,
       size: 60 + Math.random() * 120, // Bigger circles: Random size between 60px and 180px
       left: Math.random() * 100, // Random horizontal position
-      top: Math.random() * 200, // Extended range to overlap more into footer
+      top: Math.random() * 300, // Extended range to overlap into footer
       opacity: 0.6 + Math.random() * 0.4, // Higher opacity between 0.6 and 1.0
     }))
   );
@@ -200,23 +200,21 @@ const Index = () => {
       </div>
 
       {/* Static Footer Circle Decoration - overlaying into footer */}
-      <div className="relative h-40 overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none z-20">
-          {footerCircles.map((circle) => (
-            <div
-              key={circle.id}
-              className="absolute rounded-full bg-white"
-              style={{
-                width: `${circle.size}px`,
-                height: `${circle.size}px`,
-                left: `${circle.left}%`,
-                top: `${circle.top}%`,
-                opacity: circle.opacity,
-                transform: 'translateX(-50%)',
-              }}
-            />
-          ))}
-        </div>
+      <div className="absolute bottom-0 left-0 right-0 h-80 overflow-hidden pointer-events-none z-30">
+        {footerCircles.map((circle) => (
+          <div
+            key={circle.id}
+            className="absolute rounded-full bg-white"
+            style={{
+              width: `${circle.size}px`,
+              height: `${circle.size}px`,
+              left: `${circle.left}%`,
+              top: `${circle.top}%`,
+              opacity: circle.opacity,
+              transform: 'translateX(-50%)',
+            }}
+          />
+        ))}
       </div>
 
       {/* Modern Footer Section */}
