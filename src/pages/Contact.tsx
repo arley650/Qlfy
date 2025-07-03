@@ -1,4 +1,5 @@
 
+
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -212,7 +213,7 @@ const Contact = () => {
                   <div className="text-center">
                     <Button 
                       type="submit" 
-                      className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-medium"
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 font-medium px-8 py-3"
                     >
                       Submit
                     </Button>
@@ -228,3 +229,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
