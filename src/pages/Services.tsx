@@ -24,45 +24,45 @@ const Services = () => {
   const services = [
     {
       icon: Brain,
-      title: "AI-Powered Risk Assessment",
-      description: "Advanced machine learning algorithms analyze creditworthiness and provide instant prequalification decisions with unprecedented accuracy.",
+      title: "AI-Powered Prequalification",
+      description: "Advanced machine learning algorithms provide instant, accurate prequalification decisions without impacting credit scores, giving consumers certainty before they apply.",
       gradient: "from-blue-500 to-cyan-500",
-      features: ["Real-time risk scoring", "Predictive analytics", "Alternative data integration"]
+      features: ["Soft credit checks only", "Instant binary decisions", "No impact on credit score"]
     },
     {
       icon: Zap,
-      title: "Instant Prequalification",
-      description: "Lightning-fast prequalification process that delivers results in seconds, not days, improving customer experience dramatically.",
+      title: "Real-Time Product Matching",
+      description: "Instantly match consumers with lending products they're eligible for, complete with APR rates and credit limits they'll actually receive.",
       gradient: "from-purple-500 to-pink-500",
-      features: ["Sub-second processing", "Real-time decisions", "24/7 availability"]
+      features: ["Guaranteed APR visibility", "Confirmed credit limits", "Binary yes/no decisions"]
     },
     {
       icon: Target,
-      title: "Precision Matching",
-      description: "Smart matching technology connects consumers with the most suitable lending products based on their unique financial profile.",
+      title: "Comprehensive Product Discovery",
+      description: "Show consumers all available lending products with transparent eligibility, helping them make informed decisions about their financial options.",
       gradient: "from-emerald-500 to-teal-500",
-      features: ["Product optimization", "Custom recommendations", "Success rate improvement"]
+      features: ["Complete product visibility", "Transparent eligibility", "Informed decision making"]
     },
     {
       icon: Shield,
-      title: "Secure & Compliant",
-      description: "Bank-grade security and full regulatory compliance ensure your data is protected while meeting all industry standards.",
+      title: "Lender IP Protection",
+      description: "Our system protects lender intellectual property while enabling participation in prequalification searches without exposing sensitive lending criteria.",
       gradient: "from-orange-500 to-red-500",
-      features: ["End-to-end encryption", "GDPR compliant", "PCI DSS certified"]
+      features: ["IP protection guaranteed", "Controlled consumer filtering", "Confidential lending criteria"]
     },
     {
       icon: Users,
-      title: "White-Label Solutions",
-      description: "Customizable solutions that can be seamlessly integrated into your existing platform with your branding and workflows.",
+      title: "Distributor-Friendly Platform",
+      description: "Free eligibility services for distributors with high-performing application journeys and transparent explanations of product availability.",
       gradient: "from-indigo-500 to-purple-500",
-      features: ["Custom branding", "API integration", "Full customization"]
+      features: ["No charges for distributors", "Transparent explanations", "Optimized conversion rates"]
     },
     {
       icon: TrendingUp,
-      title: "Analytics & Insights",
-      description: "Comprehensive reporting and analytics dashboard providing deep insights into performance metrics and user behavior.",
+      title: "Cost-Effective Bureau Usage",
+      description: "Efficient credit bureau utilization ensures lenders aren't constrained by excessive costs while maintaining comprehensive market presence.",
       gradient: "from-pink-500 to-rose-500",
-      features: ["Real-time dashboards", "Performance metrics", "Business intelligence"]
+      features: ["Reduced bureau costs", "Market presence maintained", "Efficient credit checks"]
     }
   ];
 
@@ -84,13 +84,13 @@ const Services = () => {
         <div className="max-w-7xl mx-auto text-center mb-20">
           <div className="inline-flex items-center bg-blue-50 border border-blue-200 rounded-full px-4 py-2 text-blue-700 text-sm font-medium mb-8">
             <Target className="w-4 h-4 mr-2" />
-            Targeted Solutions
+            Prequalification Solutions
           </div>
           <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-8 leading-tight">
             Our Services
           </h1>
           <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Discover our comprehensive suite of AI-powered lending solutions designed to transform your prequalification process.
+            Revolutionizing lending prequalification for consumers, distributors, and lenders with transparent, instant, and secure solutions.
           </p>
         </div>
 
@@ -128,10 +128,10 @@ const Services = () => {
         <div className="max-w-7xl mx-auto text-center mb-20">
           <div className="bg-white/60 backdrop-blur-sm rounded-3xl shadow-xl border border-white/20 p-12">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-              Ready to Transform Your Lending Process?
+              Ready to Transform Lending Prequalification?
             </h2>
             <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-              Get started with our cutting-edge solutions and see the difference AI-powered prequalification can make for your business.
+              Join the revolution in transparent, instant prequalification that benefits consumers, distributors, and lenders alike.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/contact">
