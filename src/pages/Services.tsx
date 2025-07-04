@@ -1,28 +1,44 @@
 
+/**
+ * Services Page Component
+ * 
+ * Showcases Qlfy's lending prequalification services with detailed feature cards.
+ * Features include:
+ * - Hero section with service overview
+ * - Interactive service cards with icons and features
+ * - Scroll progress indicator
+ * - Responsive grid layout
+ * - Gradient overlays and hover animations
+ */
+
 import { useState, useEffect } from "react";
 import Navigation from "../components/Navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Zap, Target, Users, Shield, TrendingUp } from "lucide-react";
 
 const Services = () => {
+  // State for tracking scroll progress percentage
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  // Effect to calculate scroll progress for the progress indicator
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
+      const scrollTop = window.scrollY; // Current scroll position
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
+      const scrollPercent = (scrollTop / docHeight) * 100; // Convert to percentage
       setScrollProgress(scrollPercent);
     };
 
+    // Add scroll event listener and cleanup on component unmount
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Services data array with icons, descriptions, and feature lists
   const services = [
     {
       icon: Brain,
-      title: "AI-Powered Prequalification",
+      title: "AI-Powered Prequalification", 
       description: "Advanced machine learning algorithms provide instant, accurate prequalification decisions without impacting credit scores, giving consumers certainty before they apply.",
       gradient: "from-blue-500 to-cyan-500",
       features: ["Soft credit checks only", "Instant binary decisions", "No impact on credit score"]
@@ -66,7 +82,7 @@ const Services = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
-      {/* Scroll Progress Bar */}
+      {/* Fixed Scroll Progress Bar - Shows reading progress */}
       <div className="fixed right-6 top-1/2 transform -translate-y-1/2 w-1 h-64 bg-slate-200 rounded-full z-50 shadow-sm">
         <div 
           className="bg-gradient-to-t from-blue-600 to-purple-600 rounded-full transition-all duration-300 ease-out w-full shadow-lg"
@@ -74,43 +90,60 @@ const Services = () => {
         />
       </div>
 
-      {/* Navigation */}
+      {/* Navigation Component */}
       <Navigation />
 
-      {/* Hero Section */}
+      {/* Hero Section - Introduction to services */}
       <div className="flex-1 p-8 relative z-10">
         <div className="max-w-7xl mx-auto text-center mb-20">
+          {/* Service badge with icon */}
           <div className="inline-flex items-center bg-blue-50 border border-blue-200 rounded-full px-4 py-2 text-blue-700 text-sm font-medium mb-8">
             <Target className="w-4 h-4 mr-2" />
             Prequalification Solutions
           </div>
+          
+          {/* Main heading with gradient text */}
           <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-slate-900 via-blue-900 to-purple-900 bg-clip-text text-transparent mb-8 leading-tight">
             Our Services
           </h1>
+          
+          {/* Service description */}
           <p className="text-xl md:text-2xl text-slate-600 mb-12 max-w-4xl mx-auto leading-relaxed">
             Revolutionizing lending prequalification for consumers, distributors, and lenders with transparent, instant, and secure solutions.
           </p>
         </div>
 
-        {/* Services Grid */}
+        {/* Services Grid Section */}
         <div className="max-w-7xl mx-auto mb-20">
+          {/* Responsive grid layout for service cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
+              // Individual service card with hover effects
               <Card key={index} className="group relative overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white/80 backdrop-blur-sm h-full">
+                {/* Gradient overlay that appears on hover */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`} />
+                
+                {/* Card header with icon and title */}
                 <CardHeader className="text-center pb-4">
+                  {/* Service icon with gradient background */}
                   <div className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <service.icon className="h-8 w-8 text-white" />
                   </div>
                   <CardTitle className="text-2xl font-bold text-slate-900">{service.title}</CardTitle>
                 </CardHeader>
+                
+                {/* Card content with description and features */}
                 <CardContent className="flex-1 flex flex-col">
+                  {/* Service description */}
                   <CardDescription className="text-slate-600 text-base leading-relaxed mb-6 flex-1">
                     {service.description}
                   </CardDescription>
+                  
+                  {/* Feature list with colored bullets */}
                   <ul className="space-y-2">
                     {service.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-sm text-slate-600">
+                        {/* Colored bullet point matching service gradient */}
                         <div className={`w-2 h-2 bg-gradient-to-r ${service.gradient} rounded-full mr-3`}></div>
                         {feature}
                       </li>

@@ -1,25 +1,42 @@
 
+/**
+ * Team/About Us Page Component
+ * 
+ * Displays the Qlfy team members with their photos, roles, and backgrounds.
+ * Features include:
+ * - Animated bubble background
+ * - Scroll progress indicator
+ * - Responsive grid layout for team member cards
+ * - Avatar components with fallback initials
+ */
+
 import { useEffect, useState } from "react";
 import Navigation from "../components/Navigation";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useBubbleAnimation } from "../hooks/useBubbleAnimation";
 
 const Team = () => {
+  // State to track scroll progress for the progress indicator
   const [scrollProgress, setScrollProgress] = useState(0);
+  
+  // Initialize 15 animated bubbles for background effect
   const bubbles = useBubbleAnimation(15);
 
+  // Effect to calculate and update scroll progress percentage
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
+      const scrollTop = window.scrollY; // Current scroll position
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
+      const scrollPercent = (scrollTop / docHeight) * 100; // Convert to percentage
       setScrollProgress(scrollPercent);
     };
 
+    // Add scroll event listener and cleanup on unmount
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Team member data array with photos, roles, and descriptions
   const teamMembers = [
     {
       initials: "RB",
@@ -67,7 +84,7 @@ const Team = () => {
 
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
-      {/* Fixed Scroll Progress Indicator - Updated to match home page styling */}
+      {/* Fixed Scroll Progress Indicator - Vertical progress bar on right side */}
       <div className="fixed right-6 top-1/2 transform -translate-y-1/2 w-1 h-64 bg-slate-200 rounded-full z-50 shadow-sm">
         <div 
           className="bg-gradient-to-t from-blue-600 to-purple-600 rounded-full transition-all duration-300 ease-out w-full shadow-lg"
@@ -75,7 +92,7 @@ const Team = () => {
         />
       </div>
 
-      {/* Bubble background */}
+      {/* Animated bubble background - Creates floating effect behind content */}
       <div className="absolute inset-0 pointer-events-none">
         {bubbles.map((bubble) => (
           <div
@@ -87,15 +104,18 @@ const Team = () => {
               left: `${bubble.x}%`,
               top: `${bubble.y}px`,
               opacity: bubble.opacity,
-              transform: 'translateX(-50%)',
+              transform: 'translateX(-50%)', // Center horizontally
             }}
           />
         ))}
       </div>
 
+      {/* Navigation component */}
       <Navigation />
       
+      {/* Main content container */}
       <div className="max-w-6xl mx-auto py-16 px-8 relative z-10">
+        {/* Page header section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">About Us</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -104,9 +124,11 @@ const Team = () => {
           </p>
         </div>
 
+        {/* Team members grid - Responsive 1-2-3 column layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {teamMembers.map((member, index) => (
             <div key={index} className="text-center">
+              {/* Avatar component with image and fallback */}
               <Avatar className="w-32 h-32 mx-auto mb-6">
                 {member.image ? (
                   <AvatarImage 
@@ -115,10 +137,13 @@ const Team = () => {
                     className="object-cover object-center w-full h-full"
                   />
                 ) : null}
+                {/* Fallback to initials if image fails to load */}
                 <AvatarFallback className="text-white text-2xl font-bold">
                   {member.initials}
                 </AvatarFallback>
               </Avatar>
+              
+              {/* Team member information */}
               <h3 className="text-xl font-semibold text-gray-900 mb-2">{member.name}</h3>
               <h4 className="text-blue-600 font-medium mb-4">{member.role}</h4>
               <p className="text-gray-600 leading-relaxed">{member.description}</p>
