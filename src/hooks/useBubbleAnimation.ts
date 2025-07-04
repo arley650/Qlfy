@@ -43,8 +43,8 @@ export const useBubbleAnimation = (bubbleCount: number = 10) => {
   // Detect if user is on mobile device using existing hook
   const isMobile = useIsMobile();
   
-  // Adjust bubble count based on device type
-  const adjustedBubbleCount = isMobile ? Math.max(5, Math.floor(bubbleCount / 3)) : bubbleCount;
+  // Dramatically reduce bubble count on mobile for better performance
+  const adjustedBubbleCount = isMobile ? Math.min(8, Math.max(3, Math.floor(bubbleCount / 10))) : bubbleCount;
 
   useEffect(() => {
     /**
