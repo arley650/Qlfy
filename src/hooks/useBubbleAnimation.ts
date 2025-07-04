@@ -16,6 +16,7 @@
  */
 
 import { useState, useEffect } from 'react';
+import { useIsMobile } from './use-mobile';
 
 /**
  * Interface defining the properties of each animated bubble
@@ -30,26 +31,6 @@ interface BubblePosition {
 }
 
 /**
- * Hook to detect if the user is on a mobile device
- */
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(false);
-  
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  
-  return isMobile;
-};
-
-/**
  * Custom hook for creating and managing animated floating bubbles
  * 
  * @param bubbleCount - Number of bubbles to render (default: 10)
@@ -59,7 +40,7 @@ export const useBubbleAnimation = (bubbleCount: number = 10) => {
   // State to store all bubble positions and properties
   const [bubbles, setBubbles] = useState<BubblePosition[]>([]);
   
-  // Detect if user is on mobile device
+  // Detect if user is on mobile device using existing hook
   const isMobile = useIsMobile();
   
   // Adjust bubble count based on device type
