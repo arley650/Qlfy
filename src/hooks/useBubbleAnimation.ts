@@ -12,6 +12,7 @@
  * - Smooth upward movement animation
  * - Automatic bubble recycling when off-screen
  * - Performance optimized with 60fps animation (16ms intervals)
+ * - Mobile-responsive bubble count for better performance
  */
 
 import { useState, useEffect } from 'react';
@@ -29,6 +30,26 @@ interface BubblePosition {
 }
 
 /**
+ * Hook to detect if the user is on a mobile device
+ */
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  return isMobile;
+};
+
+/**
  * Custom hook for creating and managing animated floating bubbles
  * 
  * @param bubbleCount - Number of bubbles to render (default: 10)
@@ -37,13 +58,19 @@ interface BubblePosition {
 export const useBubbleAnimation = (bubbleCount: number = 10) => {
   // State to store all bubble positions and properties
   const [bubbles, setBubbles] = useState<BubblePosition[]>([]);
+  
+  // Detect if user is on mobile device
+  const isMobile = useIsMobile();
+  
+  // Adjust bubble count based on device type
+  const adjustedBubbleCount = isMobile ? Math.max(5, Math.floor(bubbleCount / 3)) : bubbleCount;
 
   useEffect(() => {
     /**
      * Initialize bubbles with random properties
      * Each bubble starts below the visible screen area
      */
-    const initialBubbles: BubblePosition[] = Array.from({ length: bubbleCount }, (_, i) => ({
+    const initialBubbles: BubblePosition[] = Array.from({ length: adjustedBubbleCount }, (_, i) => ({
       id: i,
       x: Math.random() * 100,                           // Random horizontal position (0-100%)
       y: window.innerHeight + Math.random() * 200,      // Start below screen with random offset
@@ -87,7 +114,7 @@ export const useBubbleAnimation = (bubbleCount: number = 10) => {
      * Clears the animation interval when component unmounts
      */
     return () => clearInterval(animationInterval);
-  }, [bubbleCount]); // Re-run effect if bubble count changes
+  }, [adjustedBubbleCount]); // Re-run effect if bubble count changes
 
   // Return current bubble positions for rendering
   return bubbles;
